@@ -1,7 +1,8 @@
  create file system 
 sel the efs file system and choose attach --> mount via ip --> to copy the command.
 login in one server: install nfs file system
-sudo apt-get -y install nfs-common
+sudo apt-get -y install nfs-common -> for ubuntu
+sudo yum -y install nfs-utils -> for Amazon linus or Red Hat
 mkdir efs
 copy the command from portal in efs file system and paste
 df -h 
