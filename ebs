@@ -1,0 +1,16 @@
+lsblk
+sudo su
+file -s /dev/xvdf --- shows data means no file system
+mkfs -t ext4 /dev/xvdf
+file -s dev/xvdf --now shows files
+lsblk
+To mount on the directory 
+mkdir ebsvol
+ls
+mount /dev/xvdf ebsvol
+lsblk
+cd ebsvol
+touch 1.txt 2.txt
+To umount:
+umount /dev/xvdf
+lsblk
