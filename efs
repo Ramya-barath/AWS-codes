@@ -9,4 +9,4 @@ copy the command from portal in efs file system and paste
 df -h 
 cd efs -> sudo touch 1.txt
 Do same for all the server 
-/* If efs is not working check the security grp for efs it should all All Traffic ,0.0.0.0/0*/
+/* If efs is not working check the security grp for efs file system  it should allow all All Traffic ,0.0.0.0/0*/
