@@ -1,0 +1,10 @@
+ create file system 
+sel the efs file system and choose attach --> mount via ip --> to copy the command.
+login in one server: install nfs file system
+sudo apt-get -y install nfs-common
+mkdir efs
+copy the command from portal in efs file system and paste
+df -h 
+cd efs -> sudo touch 1.txt
+Do same for all the server 
+/* If efs is not working check the security grp for efs it should all All Traffic ,0.0.0.0/0*/
