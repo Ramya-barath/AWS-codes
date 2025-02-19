@@ -1,0 +1,12 @@
+We need s3 bucket and IAM role to load data into the table.
+create cluster --> cluster name-->db_user_name > db_pass>create
+go to query editorv2 > create table > schema public > tablename
+load the data from excel as csv file which has data > create table
+create role > service redshift > policy s3 fullaccess
+In s3 load the excel data without header.
+click Load data in the query editor  > sel s3 bucket > sel bucket >
+data > ok
+schema - public
+sel our redshift cluster > Action > IAM > sel our role >save
+now in the query editor we will able to sel the role while loading data.
+now you can query the data but sel the table and run.
