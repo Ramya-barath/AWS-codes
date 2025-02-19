@@ -10,3 +10,8 @@ schema - public
 sel our redshift cluster > Action > IAM > sel our role >save
 now in the query editor we will able to sel the role while loading data.
 now you can query the data but sel the table and run.
+
+
+Advantage of Redshift:
+It will save the query what ever we run inside it. so that when you try the same query it will retriew
+within less time than before.
