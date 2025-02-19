@@ -6,6 +6,7 @@
             "Effect": "Allow",
             "Principal": {
                 "AWS": "arn:aws:iam::677276102559:user/dev1"
+                "AWS": "arn:aws:iam::677276102559:user/dev1"
             },
             "Action": "sts:AssumeRole"
         }
