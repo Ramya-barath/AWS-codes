@@ -1,0 +1,2 @@
+see all active resources in aws -->command:
+aws resourcegroupstaggingapi get-resources
