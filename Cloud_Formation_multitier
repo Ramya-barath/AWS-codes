@@ -1,3 +1,4 @@
+-----> no errors in CF-----
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Multi-Tier Architecture with Web, Application, and Database Tiers
 
