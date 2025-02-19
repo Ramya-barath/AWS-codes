@@ -96,9 +96,6 @@ Edit
 sudo nano /var/www/html/config.php
 Add this PHP code:
 
-php
-Copy
-Edit
 <?php
 $servername = "your-rds-endpoint";
 $username = "admin";
@@ -112,9 +109,47 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully";
+
+// Handle form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id = $_POST["id"];
+    $name = $_POST["name"];
+
+    // Prepare SQL statement
+    $stmt = $conn->prepare("INSERT INTO data (id, name) VALUES (?, ?)");
+    $stmt->bind_param("is", $id, $name);
+
+    if ($stmt->execute()) {
+        echo "Record inserted successfully!";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+    $stmt->close();
+}
+
+// Fetch and display records
+$result = $conn->query("SELECT * FROM data");
+
+echo "<h2>Stored Data:</h2>";
+echo "<table border='1'><tr><th>ID</th><th>Name</th></tr>";
+
+while ($row = $result->fetch_assoc()) {
+    echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td></tr>";
+}
+
+echo "</table>";
+
+$conn->close();
 ?>
-Save and exit (CTRL + X, then Y, then Enter)
+
+<!-- HTML Form -->
+<h2>Enter Data:</h2>
+<form method="post">
+    ID: <input type="number" name="id" required><br>
+    Name: <input type="text" name="name" required><br>
+    <input type="submit" value="Submit">
+</form>
+
 
 Restart Apache:
 
